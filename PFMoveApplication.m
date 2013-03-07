@@ -211,6 +211,9 @@ fail:
 #pragma mark Helper Functions
 
 static NSString *PreferredInstallLocation(BOOL *isUserDirectory) {
+    // Disable user Applications folder functionality
+    
+    /*
 	// Return the preferred install location.
 	// Assume that if the user has a ~/Applications folder, they'd prefer their
 	// applications to go there.
@@ -238,8 +241,8 @@ static NSString *PreferredInstallLocation(BOOL *isUserDirectory) {
 	}
 
 	// No user Applications directory in use. Return the machine local Applications directory
-	if (isUserDirectory) *isUserDirectory = NO;
-
+	if (isUserDirectory)*/
+    *isUserDirectory = NO;
 	return [[NSSearchPathForDirectoriesInDomains(NSApplicationDirectory, NSLocalDomainMask, YES) lastObject] stringByResolvingSymlinksInPath];
 }
 
